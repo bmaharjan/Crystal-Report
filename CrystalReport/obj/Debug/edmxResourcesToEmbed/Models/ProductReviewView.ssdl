@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdventureWorks2012Model2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AdventureWorks2012.dbo.ProductReviewView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProductReviewView">
+    <Key>
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="ReviewerName" />
+      <PropertyRef Name="Rating" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="15" />
+    <Property Name="Size" Type="nvarchar" MaxLength="5" />
+    <Property Name="ReviewerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="3850" />
+  </EntityType>
+  <EntityContainer Name="AdventureWorks2012Model2StoreContainer">
+    <EntitySet Name="ProductReviewView" EntityType="Self.ProductReviewView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ProductReviewView].[Name] AS [Name], 
+    [ProductReviewView].[Color] AS [Color], 
+    [ProductReviewView].[Size] AS [Size], 
+    [ProductReviewView].[ReviewerName] AS [ReviewerName], 
+    [ProductReviewView].[Rating] AS [Rating], 
+    [ProductReviewView].[Comments] AS [Comments]
+    FROM [dbo].[ProductReviewView] AS [ProductReviewView]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
