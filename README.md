@@ -1,4 +1,4 @@
-# Crystal-Report
+# Create Crystal-Report using LINQ to Entities
 1. Create an empty MVC Project.
 2. Create a data connection.
 3. Create an entity Data Object.
